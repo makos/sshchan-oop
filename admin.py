@@ -1,5 +1,8 @@
-#-*- coding: utf-8 -*-
-# sshchan admin/config panel
+"""Admin commandline interface, accessible after succesful authentication.
+
+Copyright (c) 2015 makos <https://github.com/makos/>
+"""
+
 from sys import exit
 
 def cmdline(cfg, display, board, c):
