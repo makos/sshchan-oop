@@ -5,6 +5,7 @@ the program, and can be modified to contain other data easily.
 
 Copyright (c) 2015 
 makos <https://github.com/makos>, chibi <http://neetco.de/chibi>
+under GNU GPL v3, see LICENSE for details
 """
 
 import os
@@ -59,7 +60,7 @@ class Config():
         self.passwd = settings["password"]
 
         # Max threads on page.
-        self.max_threads = 15
+        self.max_threads = 15 - 1
         # Terminal size.
         self.tty_cols = os.get_terminal_size()[0]
         self.tty_lines = os.get_terminal_size()[1] 

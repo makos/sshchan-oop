@@ -5,7 +5,9 @@ It uses a special version of print called laprint which stands for
 line-aware print. It counts the lines printed to then appropriately
 fill the rest of screen with newlines.
 
-Copyright (c) 2015 makos <matmak@protonmail.com>, chibi
+Copyright (c) 2015
+makos <https://github.com/makos>, chibi <http://neetco.de/chibi>
+under GNU GPL v3, see LICENSE for details
 """
 
 import time

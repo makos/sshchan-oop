@@ -6,7 +6,9 @@ instead of using escape codes.
 '''text''' --> bold
 ~~text~~ --> strikethrough
 
-Copyright (c) 2015 makos <matmak@protonmail.com>, chibi
+Copyright (c) 2015
+makos <https://github.com/makos>, chibi <http://neetco.de/chibi>
+under GNU GPL v3, see LICENSE for details
 """
 
 import re

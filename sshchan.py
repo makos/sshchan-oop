@@ -7,6 +7,7 @@ the boards. Only admins can add boards.
 
 Copyright (c) 2015
 makos <https://github.com/makos>, chibi <http://neetco.de/chibi>
+under GNU GPL v3, see LICENSE for details
 """
 
 import logging

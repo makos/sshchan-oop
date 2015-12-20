@@ -3,6 +3,7 @@
 Setup script to create everything needed for a working textboard.
 
 Copyright (c) 2015 makos <https://github.com/makos>
+under GNU GPL v3, see LICENSE for details
 """
 
 import json

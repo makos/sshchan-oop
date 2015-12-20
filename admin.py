@@ -1,6 +1,7 @@
 """Admin commandline interface, accessible after succesful authentication.
 
 Copyright (c) 2015 makos <https://github.com/makos/>
+under GNU GPL v3, see LICENSE for details
 """
 
 from sys import exit
@@ -50,7 +51,6 @@ separated by whitespace.", c.BLACK)
 
         elif cmd_argv[0] == "del":
             if len(cmd_argv) > 1:
-                # board = cmd_argv[1]
                 board.name = cmd_argv[1]
                 answer = str(input("Are you sure you want to delete \
 board /" + board.name + "/? (y/n): "))
