@@ -26,7 +26,7 @@ class Colors():
     BLUE = '\033[0;34m'
     BLACK = '\033[0m'
 
-    # bold (bright) variants of the same colors above
+    # Bold (bright) variants of the same colors above.
     bRED = '\033[1;31m'
     bYELLOW = '\033[1;33m'
     bGREEN = '\033[1;32m'
@@ -58,12 +58,12 @@ class Config():
         self.salt = settings["salt"]
         self.passwd = settings["password"]
 
-        # max threads on page
+        # Max threads on page.
         self.max_threads = 15
-        # terminal size
+        # Terminal size.
         self.tty_cols = os.get_terminal_size()[0]
         self.tty_lines = os.get_terminal_size()[1] 
-        # used for laprint() from Display
+        # Used for laprint() from Display.
         self.lines_printed = 0
 
     def load(self):
@@ -112,8 +112,6 @@ class Config():
 
     def setPostnums(self, values):
         """Update/create the postnums for board name with value."""
-        # buf = self.getPostnums()
-        # buf[name] = value
         with open(self.postnums_path, 'w') as p:
             json.dump(values, p, indent=4)
         logging.info("Updated postnums file.")

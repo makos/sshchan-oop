@@ -26,7 +26,7 @@ class Board():
     def __init__(self, name='', desc='', config=None):
         assert config is not None, logging.critical(
             "Board.__init__: config is None")
-        # configuration object used to read / write config values
+        # Configuration object used to read / write config values.
         self.config = config            
 
         self._name = name.lower()
@@ -58,18 +58,18 @@ class Board():
         if self._name in self.config.getBoardlist().keys() \
                 or self._name == '':
             return False
-        # add the board to boardlist
+        # Add the board to boardlist.
         buf = self.config.getBoardlist()
         buf[self._name] = self._desc
         self.config.setBoardlist(buf)
-        # create the board directory
+        # Create the board directory.
         try:
             os.makedirs(self.path)
         except OSError as e:
             logging.error("Board.addBoard(): %s", e)
-        # create the index file
+        # Create the index file.
         self.setIndex([])
-        # edit postnums
+        # Edit postnums.
         postn = self.config.getPostnums()
         postn[self._name] = 0
         self.config.setPostnums(postn)
@@ -125,10 +125,12 @@ class Board():
 
     @property
     def desc(self):
+        """Getter for description field."""
         return self._desc
 
     @desc.setter
     def desc(self, value):
+        """Setter for description field."""
         self._desc = value
 
     def rename(self, name, desc=""):
@@ -136,23 +138,23 @@ class Board():
         if desc == "":
             desc = self._desc
         if self._name in self.config.getBoardlist().keys():
-            # change boardlist
+            # Change boardlist.
             buf = self.config.getBoardlist()
             buf[name] = desc
             del buf[self._name]
             self.config.setBoardlist(buf)
-            # change directories
+            # Change directories.
             try:
                 new_path = os.path.join(self.config.root, '/boards/' + name)
                 os.makedirs(new_path)
-                # copy index file
+                # Copy index file.
                 shutil.copy(self.index_path, new_path)
                 os.remove(self.index_path)
                 os.removedirs(self.path)
             except OSError:
                 logging.error("Board.addBoard: %s", e)
                 return False
-            # re-point the class fields to new values
+            # rRe-point the class fields to new values.
             self._name = name
             self._desc = desc
             self.path = new_path
@@ -210,4 +212,4 @@ class Board():
                     postnums[self._name] += 1
                     self.config.setPostnums(postnums)
                     return True
-        return False  # if posting fails
+        return False  # If posting fails.

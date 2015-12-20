@@ -31,13 +31,11 @@ user = getpass.getuser()
 
 passw = bytes(passw, "utf-8")
 
+# Hash the password with salt.
 salt = os.urandom(len(passw) * 2)
 sha = hashlib.sha256()
 sha.update(salt + passw)
 hash_passw = str(sha.hexdigest())
-
-print(hash_passw)
-
 
 if not root:
     root = Config.defaults["rootdir"]
@@ -78,13 +76,6 @@ else:
     with open("/etc/sshchan.conf", 'w') as f:
         json.dump(defaults, f, indent=4)
     cfg = Config()
-
-# try:
-#     cfg.save()
-# except PermissionError:
-#     print("Could not dump settings into path {}".format(cfg.path))
-#     print("Please choose a path that you have access to.")
-#     sys.exit(1)
 
 print("Creating directories and files...")
 print("rootdir: {}".format(cfg.root))

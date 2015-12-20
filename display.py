@@ -168,6 +168,7 @@ class Display():
         self.layout()
         
     def displayThread(self, thread_id):
+        """Print out thread contents (replies) in detail."""
         global c
         assert self.board is not None, logging.critical(
             "Display.displayBoard(): board is None.")
@@ -194,6 +195,7 @@ class Display():
         self.layout()
 
     def postMenu(self, thread_id=-1):
+        """Posting prompt for new thread / reply."""
         buf = ""
         print("Post text: (make an empty line to stop editing)")
 

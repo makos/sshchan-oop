@@ -23,6 +23,7 @@ from display import Display
 
 
 def authenticate(display, config, password):
+    """Authentication function for admin cmdline."""
     salt = bytes.fromhex(config.salt)
     pwd = config.passwd
     user = config.admin
@@ -150,8 +151,6 @@ def cmdline(cfg, display, board, marker, c):
         print_help(display, marker)
         return False
 
-
-# action begins here
 
 if __name__ == "__main__":
     if len(sys.argv) > 1:
