@@ -17,8 +17,8 @@ We were working on a curses gui in `gui.py` but there have been problems and dev
 How to Install / Dependencies
 ---
 
-	git clone http://neetco.de/chibi/sshchan.git sshchan
-	cd sshchan
+	git clone https://github.com/makos/sshchan-oop.git
+	cd sshchan-oop
 	python3 setup.py
 That should set up the basic chan for you. From there, read the documentation `docs/setup.md` for more admin stuff.
 

@@ -32,5 +32,5 @@ Changes the specified board's description to [new description].
 ### `config [config option] [value]`
 Sets the value of [config option] to [value] in `/etc/sshchan.conf`. See `docs/config.md` for a list of config options.
 
-### `list`
+### `list | ls`
 Lists all the current boards.
