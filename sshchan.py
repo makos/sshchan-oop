@@ -26,14 +26,14 @@ from display import Display
 def authenticate(display, config, password):
     """Authentication function for admin cmdline."""
     salt = bytes.fromhex(config.salt)
-    pwd = config.passwd
+    pwd = bytes.fromhex(config.passwd)
     user = config.admin
     password = bytes(password, "utf-8")
     sha = hashlib.sha256()
 
     if user == getpass.getuser():
         sha.update(salt + password)
-        if str(sha.hexdigest()) == pwd:
+        if sha.digest() == pwd:
             return True
         else:
             return False
