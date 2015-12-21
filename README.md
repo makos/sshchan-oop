@@ -8,11 +8,11 @@ A textboard environment implemented in Python. At the moment it is a script mean
 Status / Warning
 ---
 
-sshchan is not usable as of now. Do not run the scripts, especially `setup.sh` unless you are a developer or very curious and willing to tolerate bugs and mishaps.
+sshchan is kind of usable as of now. Run setup.py to create needed directories and files and then sshchan.py to browse / administer the boards.
 
 ### gui status
 
-We were working on a curses gui in `gui.py` but there have been problems and development on that has temporarily stopped. If you want to try out sshchan, run `sshchan.py` instead.
+We were working on a curses gui in `gui.py` but there have been problems and development on that has temporarily stopped. If you want to try out sshchan, run `sshchan.py` instead. Urwid library seems like an option since it's nicer to use than plain curses Python module.
 
 How to Install / Dependencies
 ---
@@ -32,8 +32,9 @@ How to use
 ---
 
 When it becomes usable, sshchan will be a full script that emulates a textboard based on the files provided by the server, which acts as the chan operator. The main usage scenario is that users log into an anonymous user account on the chan operator's ssh server, which forces them to run the script with this line in your `/etc/ssh/sshd_config`:
-	Match User anonymous
-	ForceCommand 'python3 sshchan.py'
+	
+    Match User anonymous
+    ForceCommand 'python3 sshchan.py'
 The script then provides the environment of a textboard so that users can make threads and posts from within the script.
 
 Configuration
@@ -49,5 +50,4 @@ Roadmap
 ---
 
 * Decide upon and implement markup language for threads
-* Ascii CAPTCHAs
-* Secure admin authentication
+* ncurses GUI with Urwid this time, maybe?
