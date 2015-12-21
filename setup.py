@@ -84,7 +84,7 @@ print("boardlist: {}".format(cfg.boardlist_path))
 print("postnums: {}".format(cfg.postnums_path))
 print("motd: {}".format(cfg.motd))
 print("boards: {}".format(os.path.join(cfg.root, "boards")))
-input("break")
+
 try:
     os.makedirs(cfg.root)
     os.makedirs(os.path.join(cfg.root, "boards"))

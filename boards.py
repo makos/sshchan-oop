@@ -107,12 +107,12 @@ class Board():
 
     @property
     def name(self):
-        """Property method for getting name of the board."""
+        """Getter for name field."""
         return self._name
 
     @name.setter
     def name(self, value):
-        """Property setter method for setting name of the board.
+        """Setter for name field.
 
         Assignments like board.name = 'b' should ONLY be used
         if the board already exists. If you want to rename the
@@ -152,10 +152,10 @@ class Board():
                 shutil.copy(self.index_path, new_path)
                 os.remove(self.index_path)
                 os.removedirs(self.path)
-            except OSError:
+            except OSError as e:
                 logging.error("Board.addBoard: %s", e)
                 return False
-            # rRe-point the class fields to new values.
+            # Re-point the class fields to new values.
             self._name = name
             self._desc = desc
             self.path = new_path

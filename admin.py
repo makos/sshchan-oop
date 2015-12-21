@@ -76,7 +76,8 @@ board /" + board.name + "/? (y/n): "))
                 else:
                     print(c.RED, "Failed to rename board.", c.BLACK)
             else:
-                print(c.RED, "Please specify the board and its new description.",
+                print(
+                    c.RED, "Please specify the board and its new description.",
                     c.BLACK)
 
         elif cmd_argv[0] == "exit":
