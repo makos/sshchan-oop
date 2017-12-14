@@ -1,5 +1,5 @@
 ### THIS
-fork is no longer maintained. For the most up-to-date version, go to http://neetco.de/chibi/sshchan and check out the `oop` branch (which should be merged into master sometime in the future). 
+fork is no longer maintained. For the most up-to-date version, go to https://github.com/einchan/sshchan and check out the `oop` branch (which should be merged into master sometime in the future). 
 
 I will leave this repository up to serve as a signpost to point to the original repository. IT WILL NOT BE UPDATED.
 
